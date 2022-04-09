@@ -33,7 +33,7 @@ export class AuthorizationGuard implements CanActivate {
           jwksUri: `${this.AUTH0_DOMAIN}/.well-known/jwks.json`,
         }),
         audi: this.AUTH0_AUDIENCE,
-        issuer: this.AUTH0_DOMAIN,
+        issuer: `${this.AUTH0_DOMAIN}/`,
         algorithms: ['RS256'],
       }),
     );
