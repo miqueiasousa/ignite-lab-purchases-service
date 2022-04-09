@@ -1,10 +1,10 @@
 import { UseGuards } from '@nestjs/common';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 
-import { ProductsService } from '../../services/products.service';
-import { AuthorizationGuard } from '../auth/authorization.guard';
-import { CreateProductInput } from './inputs/createProductInput';
-import { Product } from './models/product';
+import { ProductsService } from '../../../services/products.service';
+import { AuthorizationGuard } from '../../auth/authorization.guard';
+import { CreateProductInput } from '../inputs/createProductInput';
+import { Product } from '../models/product';
 
 @Resolver()
 export class ProductsResolver {

@@ -7,7 +7,7 @@ import { ApolloDriver } from '@nestjs/apollo';
 
 import { DatabaseModule } from '../database/database.module';
 import { ProductsService } from '../services/products.service';
-import { ProductsResolver } from './graphql/products.resolver';
+import { ProductsResolver } from './graphql/resolvers/products.resolver';
 
 @Module({
   imports: [
