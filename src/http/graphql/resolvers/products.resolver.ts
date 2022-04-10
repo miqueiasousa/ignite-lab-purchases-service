@@ -3,10 +3,11 @@ import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 
 import { ProductsService } from '../../../services/products.service';
 import { AuthorizationGuard } from '../../auth/authorization.guard';
-import { CreateProductInput } from '../inputs/createProductInput';
-import { Product } from '../models/product';
 
-@Resolver()
+import { Product } from '../models/product';
+import { CreateProductInput } from '../inputs/createProductInput';
+
+@Resolver(() => Product)
 export class ProductsResolver {
   constructor(private productsService: ProductsService) {}
 
