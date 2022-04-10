@@ -6,11 +6,17 @@ import { PrismaService } from '../database/prisma/prisma.service';
 export class CustomersService {
   constructor(private prisma: PrismaService) {}
 
-  findByUserId(userId: string) {
-    return this.prisma.customer.findUnique({
+  async findByUserId(userId: string) {
+    const customer = await this.prisma.customer.findUnique({
       where: {
         userId,
       },
     });
+
+    if (!customer) {
+      throw new Error('Customer not found!');
+    }
+
+    return customer;
   }
 }
