@@ -1,5 +1,7 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
+import { Purchase } from './purchase';
+
 @ObjectType()
 export class Customer {
   @Field(() => ID)
@@ -13,4 +15,7 @@ export class Customer {
 
   @Field()
   updatedAt: Date;
+
+  @Field(() => [Purchase])
+  purchases: Purchase[];
 }

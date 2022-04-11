@@ -32,6 +32,7 @@ type Customer {
   userId: String!
   createdAt: DateTime!
   updatedAt: DateTime!
+  purchases: [Purchase!]!
 }
 
 type Query {
