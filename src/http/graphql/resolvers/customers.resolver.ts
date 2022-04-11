@@ -26,7 +26,7 @@ export class CustomersResolver {
 
   @Query(() => Customer)
   @UseGuards(AuthorizationGuard)
-  async customer(
+  async me(
     @CurrentUser()
     user: AuthUser,
   ) {
